@@ -6,7 +6,7 @@ import com.morphosium.sbdeneme.model.Character;
 
 import java.util.List;
 
-public interface CharacterRepository {
+public interface ICharacterRepository {
   List<Character> findAll();
   List<Character> findByAnimation(Animation animation);
   Character getById(Long id);

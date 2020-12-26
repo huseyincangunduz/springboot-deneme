@@ -5,11 +5,11 @@ import com.morphosium.sbdeneme.model.Character;
 
 import java.util.List;
 
-public interface AnimationRepository {
+public interface IAnimationRepository {
   List<Animation> findAll();
   Animation getById(Long id);
   List<Animation> findByName(String name);
-  void create(Animation animation);
+  Animation create(Animation animation);
   Animation findAnimationByCharacter(Character character);
   Animation update(Animation animation);
   void delete(long id);

@@ -10,7 +10,8 @@ public interface IFictionalEntitiesService {
   List<Animation> findAnimations();
   Animation findAnimation(Long id) throws AnimationNotFoundException;
   Animation findAnimationByCharacter(Character character) throws  AnimationNotFoundException;
-  void createAnimation(Animation animation);
+  Animation createAnimation(Animation animation);
   Animation updateAnimation(Animation animation);
   void deleteAnimation(Long id);
 }
+

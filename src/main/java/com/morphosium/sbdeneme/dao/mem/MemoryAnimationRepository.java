@@ -1,6 +1,6 @@
 package com.morphosium.sbdeneme.dao.mem;
 
-import com.morphosium.sbdeneme.dao.AnimationRepository;
+import com.morphosium.sbdeneme.dao.IAnimationRepository;
 import com.morphosium.sbdeneme.model.Animation;
 import com.morphosium.sbdeneme.model.Character;
 import org.springframework.stereotype.Repository;
@@ -9,11 +9,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
-public class AnimationRepositoryInMemoryImpl implements AnimationRepository {
+public class MemoryAnimationRepository implements IAnimationRepository {
 
   private Map<Long, Animation> animationMap = new HashMap();
 
-  public AnimationRepositoryInMemoryImpl() {
+  public MemoryAnimationRepository() {
     Animation gravityFalls = new Animation();
     gravityFalls.setId(1L);
     gravityFalls.setName("Gravity Falls");
@@ -22,13 +22,8 @@ public class AnimationRepositoryInMemoryImpl implements AnimationRepository {
     familyGuy.setId(2L);
     familyGuy.setName("Family Guy");
 
-    Animation southPark = new Animation();
-    southPark.setId(3L);
-    southPark.setName("South Park");
-
     animationMap.put(1L, gravityFalls);
     animationMap.put(2L, familyGuy);
-    animationMap.put(3L, southPark);
   }
 
   @Override
@@ -48,9 +43,10 @@ public class AnimationRepositoryInMemoryImpl implements AnimationRepository {
   }
 
   @Override
-  public void create(Animation animation) {
+  public Animation create(Animation animation) {
     animation.setId(new Date().getTime());
     animationMap.put(animation.getId(), animation);
+    return animation;
   }
 
   @Override

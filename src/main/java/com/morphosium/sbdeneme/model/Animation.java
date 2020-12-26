@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Animation {
-  private Long id; //todo: bundan dolayı hata çıkarsa, ref tipi olarak vermeyi dene
+  private Long id;
   private String name;
 
   public Long getId() {

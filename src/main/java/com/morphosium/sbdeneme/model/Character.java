@@ -1,7 +1,7 @@
 package com.morphosium.sbdeneme.model;
 
 public class Character {
-  private Long id; //todo: bundan dolayı hata çıkarsa, ref tipi olarak vermeyi dene
+  private Long id;
   private String name;
 
   private Animation animation;
